@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+PORT = process.env.PORT || 5000,
+  express = require('express'),
+  app = express();
+app.get('/', (req, res) => res.send('This app is working!!!'));
+
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://endriu:andrzej1@ds253783.mlab.com:53783/database-1', {
-      useMongoClient: true
-});
+mongoose.connect('mongodb://endriu:andrzej1@ds253783.mlab.com:53783/database-1');
 
 
 //new user Schema
